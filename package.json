@@ -1,0 +1,26 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import Home from '../screens/Home';
+import Perfil from '../screens/Perfil';
+
+const Tab = createBottomTabNavigator();
+
+export default function TabRoutes({ route }) {
+  const usuario = route.params?.usuario;
+
+  return (
+    <Tab.Navigator>
+      <Tab.Screen 
+        name="Home" 
+        component={Home}
+        initialParams={{ usuario }}
+      />
+      
+      <Tab.Screen 
+        name="Perfil" 
+        component={Perfil}
+        initialParams={{ usuario }}
+      />
+    </Tab.Navigator>
+  );
+}

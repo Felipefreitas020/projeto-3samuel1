@@ -1,0 +1,25 @@
+import { View, Text, Button, Image } from 'react-native';
+
+export default function Perfil({ route, navigation }) {
+  const usuario = route.params?.usuario;
+
+  function logout() {
+    navigation.replace('Login');
+  }
+
+  return (
+    <View style={{ padding: 20 }}>
+      <Text>Perfil de {usuario}</Text>
+
+      <Image
+        source={{ uri: 'https://www.google.com/imgres?q=voz%C3%A3o&imgurl=https%3A%2F%2Flookaside.instagram.com%2Fseo%2Fgoogle_widget%2Fcrawler%2F%3Fmedia_id%3D3342418607849266004&imgrefurl=https%3A%2F%2Fwww.instagram.com%2Fp%2FC5iqAPTgttU%2F&docid=3BWdTUTHn_qbZM&tbnid=C6KjbAM6YHLKhM&vet=12ahUKEwjQ5pOK09yTAxXzlZUCHV0gN0wQnPAOegQIEhAB..i&w=1233&h=1299&hcb=2&ved=2ahUKEwjQ5pOK09yTAxXzlZUCHV0gN0wQnPAOegQIEhAB' }}
+        style={{ width: 100, height: 100, marginVertical: 10 }}
+      />
+
+      <Text>Email: usuario@email.com</Text>
+      <Text>Nascimento: 01/01/2000</Text>
+
+      <Button title="Sair" onPress={logout} />
+    </View>
+  );
+}
